@@ -43,7 +43,7 @@ void optimizedBubbleSort(LinkedList* list);
 void selectionSort(LinkedList* list);
 void optimizedSelectionSort(LinkedList* list);
 
-void evalSortingEfficiency(int listSize, void (*func)(LinkedList*));
+int evalSortingEfficiency(int listSize, void (*func)(LinkedList*));
 
 // Bubble sort algorithm for sorting the linked list
 void bubbleSort(LinkedList* list) {
@@ -159,37 +159,8 @@ void insertionSort(LinkedList* list)
     }
 }
 
-// Main function
-int main() {
-
-    int iTestSize = 50000;
-
-    cout << "Bubble Sort: " << endl;
-    evalSortingEfficiency(iTestSize, &bubbleSort);
-    cout << "======================\n" << endl;
-
-    cout << "Bubble Sort Otimizado: " << endl;
-    evalSortingEfficiency(iTestSize, &optimizedBubbleSort);
-    cout << "======================\n" << endl;
-
-    cout << "Selection Sort: " << endl;
-    evalSortingEfficiency(iTestSize, &selectionSort);
-    cout << "======================\n" << endl;
-
-    // can be worse than the unoptimized
-    cout << "Selection Sort Otimizado: " << endl;
-    evalSortingEfficiency(iTestSize, &optimizedSelectionSort);
-    cout << "======================\n" << endl;
-
-    cout << "Insertion Sort: " << endl;
-    evalSortingEfficiency(iTestSize, &insertionSort);
-    cout << "======================\n" << endl;
-
-    return 0;
-}
-
 // Function to evaluate sorting efficiency
-void evalSortingEfficiency(int listSize, void (*func)(LinkedList*)) {
+int evalSortingEfficiency(int listSize, void (*func)(LinkedList*)) {
     LinkedList* list = newRandomList(listSize);
 
     // Measure the time to execute the function
@@ -199,8 +170,60 @@ void evalSortingEfficiency(int listSize, void (*func)(LinkedList*)) {
 
     // Calculate execution time
     auto timeDuration = duration_cast<nanoseconds>(timeStop - timeStart);
-    cout << "Tempo utilizado: " << timeDuration.count() * 1e-9 << " segundos" << endl;
+    int seconds = timeDuration.count() * 1e-9;
+
+    return seconds;
 }
+
+// Main function
+int main() {
+
+    int iTestSize = 50000;
+
+    cout << "Bubble Sort: " << endl;
+    auto s1 = 0;
+    for (int i = 0; i < 1000; i++) {
+        s1 += evalSortingEfficiency(iTestSize, &bubbleSort);
+    }
+    cout << "Average time: " << s1/1000 << endl;	
+    cout << "======================\n" << endl;
+
+    cout << "Bubble Sort Otimizado: " << endl;
+    auto s2 = 0;
+    for (int i = 0; i < 1000; i++) {
+        s2 += evalSortingEfficiency(iTestSize, &optimizedBubbleSort);
+    }
+    cout << "Average time: " << s2/1000 << endl;
+    cout << "======================\n" << endl;
+
+    cout << "Selection Sort: " << endl;
+    auto s3 = 0;
+    for (int i = 0; i < 1000; i++) {
+        s3 += evalSortingEfficiency(iTestSize, &selectionSort);
+    }
+    cout << "Average time: " << s3/1000 << endl;
+    cout << "======================\n" << endl;
+
+    // can be worse than the unoptimized
+    cout << "Selection Sort Otimizado: " << endl;
+    auto s4 = 0;
+    for (int i = 0; i < 1000; i++) {
+        s4 += evalSortingEfficiency(iTestSize, &optimizedSelectionSort);
+    }
+    cout << "Average time: " << s4/1000 << endl;
+    cout << "======================\n" << endl;
+
+    cout << "Insertion Sort: " << endl;
+    auto s5 = 0;
+    for (int i = 0; i < 1000; i++) {
+        s5 += evalSortingEfficiency(iTestSize, &insertionSort);
+    }
+    cout << "Average time: " << s5/1000 << endl;
+    cout << "======================\n" << endl;
+
+    return 0;
+}
+
 
 // Function to create a new linked list
 LinkedList* newLinkedList() {
