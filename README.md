@@ -2,7 +2,7 @@
 
 ## Description
 
-This project is a collection of sorting algorithms implemented from scratch in C++. We're also computing the necessary time to sort a doubly linked list of numbers with each algorithm.
+This project is a collection of sorting algorithms implemented from scratch in C++. We're also computing the necessary time (seconds) to sort a doubly linked list of numbers with each algorithm.
 
 The main goal of this project is to learn and understand the inner workings of sorting algorithms.
 
