@@ -23,5 +23,7 @@ float evalSortTime(int listSize, int seed, void (*func)(LinkedList*)) {
     // Calculate execution time
     auto timeDuration = duration_cast<nanoseconds>(timeStop - timeStart);
     
+    freeList(list);
+
     return timeDuration.count() * 1e-9;
 }

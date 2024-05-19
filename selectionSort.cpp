@@ -23,8 +23,7 @@ void selectionSort(LinkedList* list) {
 }
 
 // Optimized selection sort algorithm for sorting the linked list
-void optimizedSelectionSort(LinkedList* list)
-{
+void optimizedSelectionSort(LinkedList* list) {
     Node* minValueNode = newNode(0);
     Node* ptrOuter = list->ptrHead;
     Node* ptrInner = list->ptrHead;
