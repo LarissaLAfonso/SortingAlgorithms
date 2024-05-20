@@ -4,8 +4,7 @@
 #include "utils/evalSortTime.h"
 #include "utils/sortingAlgorithms.h"
 
-using std::cout;
-using std::endl;
+using namespace std;
 
 int main() {
 

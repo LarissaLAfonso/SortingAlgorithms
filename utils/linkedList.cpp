@@ -1,8 +1,7 @@
 #include <iostream>
 #include "linkedList.h"
 
-using std::cout;
-using std::endl;
+using namespace std;
 
 LinkedList* newLinkedList() {
     LinkedList* temp = (LinkedList*) malloc(sizeof(LinkedList));

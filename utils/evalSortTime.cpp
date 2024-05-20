@@ -5,12 +5,11 @@
 #include "linkedList.h"
 #include "evalSortTime.h"
 
-using std::cout;
-using std::endl;
+using namespace std;
 
-using std::chrono::high_resolution_clock;
-using std::chrono::duration_cast;
-using std::chrono::nanoseconds;
+using chrono::high_resolution_clock;
+using chrono::duration_cast;
+using chrono::nanoseconds;  
 
 float evalSortTime(int listSize, int seed, void (*func)(LinkedList*)) {
     LinkedList* list = newRandomList(listSize, seed);
@@ -22,8 +21,6 @@ float evalSortTime(int listSize, int seed, void (*func)(LinkedList*)) {
 
     // Calculate execution time
     auto timeDuration = duration_cast<nanoseconds>(timeStop - timeStart);
-    
-    freeList(list);
 
     return timeDuration.count() * 1e-9;
 }
