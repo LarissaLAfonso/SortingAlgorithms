@@ -17,7 +17,7 @@ LinkedList* newRandomList(int iListSize, int seed) {
     srand(seed);
 
     for (int i=0; i<iListSize; i++) {
-        int iRandNum = rand() % 1000;
+        int iRandNum = rand() % 100 + 1;
         addElement(temp, iRandNum);
     }
 
