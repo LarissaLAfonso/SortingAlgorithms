@@ -3,6 +3,30 @@
 
 using namespace std;
 
+int getMax(LinkedList* const list) {
+    Node* temp = list->ptrHead;
+    int max = temp->iData;
+
+    while (temp != nullptr) {
+        if (temp->iData > max) {
+            max = temp->iData;
+        }
+        temp = temp->ptrNext;
+    }
+
+    return max;
+}
+
+LinkedList* listFromArray(int *arriValues, int iArraySize) {
+    LinkedList* temp = newLinkedList();
+
+    for (int i=0; i<iArraySize; i++) {
+        addElement(temp, arriValues[i]);
+    }
+
+    return temp;
+}
+
 LinkedList* newLinkedList() {
     LinkedList* temp = (LinkedList*) malloc(sizeof(LinkedList));
     temp->ptrHead  = nullptr;

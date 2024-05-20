@@ -14,8 +14,10 @@ extern "C" {
         Node* ptrTail;
     } LinkedList;
 
-    LinkedList* newLinkedList();
+    int getMax(LinkedList* const list);
 
+    LinkedList* newLinkedList();
+    LinkedList* listFromArray(int *arriValues, int iArraySize);
     LinkedList* newRandomList(int iListSize, int seed=0);
     Node* newNode(int iValue);
     Node* searchElement(LinkedList* const list, int iValue);

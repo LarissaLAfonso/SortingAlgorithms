@@ -11,6 +11,12 @@ int main() {
     int iNumberTests = 100;
     int iListSize = 10000;
 
+    int arriValues[10] = {73, 3, 12, 8, 9, 99, 100, 42, 5, 1};
+
+    LinkedList* list = listFromArray(arriValues, 10);
+
+    showElements(list);
+
     cout << "Bubble Sort, Optimized Bubble Sort, Selection Sort, Optimized Selection Sort, Insertion Sort" << endl;
 
     for (int i=0; i<iNumberTests; i++) {
