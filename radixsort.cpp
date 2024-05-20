@@ -46,21 +46,6 @@ void radixSort(LinkedList* list)
 {
     int iMaximum = getMax(list);
 
-    /*
-    int iExp = 0;
-    if ((iMaximum % 1000) > (iMaximum % 100))
-    {
-        iExp = 3;
-    }
-    elif ((iMaximum % 100) > (iMaximum % 10))
-    {
-        iExp = 2;
-    }
-    elif ((iMaximum % 10) > (iMaximum))
-    {
-        iExp = 1;
-    }*/
-
     for (int exp = 1; iMaximum / exp > 0; exp *= 10)
         optimizedSelectionSortModulo(list, exp)
 };
