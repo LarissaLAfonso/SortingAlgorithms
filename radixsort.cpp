@@ -18,15 +18,15 @@ void optimizedSelectionSortModulo(LinkedList* list, int iExp) {
 
         while (ptrInner) {
 
-            int minNodeModulo = (minValueNode->iData) % (pow(10, iExp));
-            int innerNodeModulo = (ptrInner->iData) % (pow(10, iExp));
+            int minNodeModulo = (minValueNode->iData) % static_cast<int>(pow(10, iExp));
+            int innerNodeModulo = (ptrInner->iData) % static_cast<int>(pow(10, iExp));
 
             int iCurrentExp = iExp - 1;
 
             while (iCurrentExp > 0)
             {
-                minNodeModulo -= (minNodeModulo) % (pow(10, iCurrentExp));
-                innerNodeModulo -= (innerNodeModulo) % (pow(10, iCurrentExp));
+                minNodeModulo -= (minNodeModulo) % static_cast<int>(pow(10, iCurrentExp));
+                innerNodeModulo -= (innerNodeModulo) % static_cast<int>(pow(10, iCurrentExp));
                 iCurrentExp -= 1;
             }
 
