@@ -5,11 +5,14 @@ void insertionSort(LinkedList* list) {
     Node* ptrOuter = list->ptrHead;
     Node* ptrInner = list->ptrHead;
 
-    while (ptrOuter && ptrOuter->ptrNext) {
-        ptrInner = ptrOuter->ptrNext;
+    int iInsertValue = 0;
 
-        while (ptrInner && ptrInner->ptrPrev && (ptrInner->iData < ptrInner->ptrPrev->iData)) {
-            swapNodes(ptrInner, ptrInner->ptrPrev);
+    while (ptrOuter) {
+        ptrInner = ptrOuter->ptrPrev;
+        iInsertValue = ptrOuter->iData;
+
+        while (ptrInner && (ptrInner->iData > iInsertValue)) {
+            swapNodes(ptrInner->ptrNext, ptrInner);
             ptrInner = ptrInner->ptrPrev;
         }
         ptrOuter = ptrOuter->ptrNext;

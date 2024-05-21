@@ -17,7 +17,11 @@ int main() {
 
     showElements(list);
 
-    cout << "Bubble Sort, Optimized Bubble Sort, Selection Sort, Optimized Selection Sort, Insertion Sort" << endl;
+    radixSort(list);
+
+    showElements(list);
+
+    cout << "Bubble Sort, Optimized Bubble Sort, Selection Sort, Optimized Selection Sort, Insertion Sort, Radix Sort" << endl;
 
     for (int i=0; i<iNumberTests; i++) {
         cout << evalSortTime(iListSize, i+1, &bubbleSort);
@@ -34,6 +38,9 @@ int main() {
 
         cout << evalSortTime(iListSize, i+1, &insertionSort);
         cout << endl;
+
+        cout << evalSortTime(iListSize, i+1, &radixSort);
+        cout << endl;        
     }
 
     return 0;

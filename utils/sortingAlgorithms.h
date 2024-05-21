@@ -10,6 +10,9 @@ extern "C" {
 
     void insertionSort(LinkedList*);
     void optimizedInsertionSort(LinkedList*);
+
+    void optimizedSelectionSortModulo(LinkedList* list, int iExp);
+    void radixSort(LinkedList*);
 }
 
 #endif
