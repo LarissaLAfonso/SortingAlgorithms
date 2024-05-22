@@ -86,12 +86,12 @@ void showElements(LinkedList<T>* const list) {
     
     Node<T>* temp = list->ptrHead;
 
+    cout << "[ ";
     while (temp != nullptr) {
         cout << temp->iData << " ";
         temp = temp->ptrNext;
     }
-
-    cout << endl;
+    cout << "]" << endl;
 
     return;
 }

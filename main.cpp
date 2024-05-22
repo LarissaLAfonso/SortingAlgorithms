@@ -9,10 +9,12 @@ using namespace std;
 int main() {
 
     int iArray[10] = {40, 3, 23, 41, 6, 73, 9, 69, 4, 100};
-    radixExplainer(iArray, 10);
+    LinkedList<int>* list = listFromArray<int>(iArray, 10);
+
+    radixExplainer(list);
 
     cout << endl;
-    cout << "===============" << endl;
+    cout << "=============== Sorting Times" << endl;
     cout << endl;
 
     int iNumberTests = 100;

@@ -18,6 +18,8 @@ template <typename T> void optimizedSelectionSortModulo(LinkedList<T>*, int);
 template <typename T> void radixSort(LinkedList<T>*);
 
 void radixSort(LinkedList<int>* list);
-void radixExplainer(int[], int);
+
+
+void radixExplainer(LinkedList<int>* list);
 
 #endif
