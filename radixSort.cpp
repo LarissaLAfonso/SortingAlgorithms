@@ -45,7 +45,7 @@ void radixExplainer(int iArray[], int size)
 
     cout << " -- Radix Sort -- " << endl;
 
-    cout << "O radix sort consiste de escolher um algotimo de ordenação qualquer\n (usualmente counting sort, mas aqui você uma implementação com selection sort e,\n a cada passo, ordena uma ordem de grandeza de acordo com esse algoritmo. " << endl;
+    cout << "O radix sort consiste de escolher um algotimo de ordenação qualquer\n (usualmente counting sort, mas aqui você uma implementação com selection sort) e,\n a cada passo, ordena uma ordem de grandeza de acordo com esse algoritmo. " << endl;
 
     
     cout << "A lista que vamos ordenar agora é" << endl;
