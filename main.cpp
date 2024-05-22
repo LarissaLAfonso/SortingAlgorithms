@@ -11,7 +11,6 @@ int main() {
     int iNumberTests = 100;
     int iListSize = 10000;
 
-
     cout << "Bubble Sort, Optimized Bubble Sort, Selection Sort, Optimized Selection Sort, Insertion Sort, Radix Sort" << endl;
 
     for (int i=0; i<iNumberTests; i++) {

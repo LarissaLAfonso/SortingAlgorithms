@@ -19,11 +19,11 @@ int getMax(LinkedList<T>* const list) {
 }
 
 template <typename T>
-LinkedList<T>* listFromArray(int *arriValues, int iArraySize) {
+LinkedList<T>* listFromArray(int *arrValues, int iArraySize) {
     LinkedList<T>* temp = newLinkedList<T>();
 
     for (int i=0; i<iArraySize; i++) {
-        addElement(temp, arriValues[i]);
+        addElement(temp, arrValues[i]);
     }
 
     return temp;
@@ -178,3 +178,5 @@ template void addElement<float>(LinkedList<float>*, float);
 
 template void swapNodes<int>(Node<int>*, Node<int>*);
 template void swapNodes<float>(Node<float>*, Node<float>*);
+
+template LinkedList<int>* listFromArray(int *arrValues, int iArraySize);

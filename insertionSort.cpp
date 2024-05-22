@@ -6,7 +6,7 @@ void insertionSort(LinkedList<T>* list) {
     Node<T>* ptrOuter = list->ptrHead;
     Node<T>* ptrInner = list->ptrHead;
 
-    int iInsertValue = 0;
+    T iInsertValue = 0;
 
     while (ptrOuter) {
         ptrInner = ptrOuter->ptrPrev;
