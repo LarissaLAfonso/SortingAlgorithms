@@ -8,6 +8,13 @@ using namespace std;
 
 int main() {
 
+    int iArray[10] = {40, 3, 23, 41, 6, 73, 9, 69, 4, 100};
+    radixExplainer(iArray, 10);
+
+    cout << endl;
+    cout << "===============" << endl;
+    cout << endl;
+
     int iNumberTests = 100;
     int iListSize = 10000;
 
@@ -33,9 +40,6 @@ int main() {
         cout << evalSortTime(iListSize, i+1, &radixSort);
         cout << endl;        
     }
-
-    int iArray[10] = {40, 3, 23, 41, 6, 73, 9, 69, 4, 100};
-    radixExplainer(iArray, 10);
 
     return 0;
 }
