@@ -1,18 +1,21 @@
 #ifndef _SORTINGALGORITHMS_H_
 #define _SORTINGALGORITHMS_H_
+#include "linkedList.h"
 
-extern "C" {
-    void bubbleSort(LinkedList*);
-    void optimizedBubbleSort(LinkedList*);
-    
-    void selectionSort(LinkedList*);
-    void optimizedSelectionSort(LinkedList*);
+template <typename T> void bubbleSort(LinkedList<T>*);
+template <typename T> void optimizedBubbleSort(LinkedList<T>*);
 
-    void insertionSort(LinkedList*);
-    void optimizedInsertionSort(LinkedList*);
 
-    void optimizedSelectionSortModulo(LinkedList* list, int iExp);
-    void radixSort(LinkedList*);
-}
+template <typename T> void selectionSort(LinkedList<T>*);
+template <typename T> void optimizedSelectionSort(LinkedList<T>*);
 
+
+template <typename T> void insertionSort(LinkedList<T>*);
+template <typename T> void optimizedInsertionSort(LinkedList<T>*);
+
+
+template <typename T> void optimizedSelectionSortModulo(LinkedList<T>*, int);
+template <typename T> void radixSort(LinkedList<T>*);
+
+void radixSort(LinkedList<int>* list);
 #endif

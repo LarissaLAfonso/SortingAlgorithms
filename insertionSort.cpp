@@ -1,9 +1,10 @@
 #include "utils/linkedList.h"
 #include "utils/sortingAlgorithms.h"
 
-void insertionSort(LinkedList* list) {
-    Node* ptrOuter = list->ptrHead;
-    Node* ptrInner = list->ptrHead;
+template <typename T>
+void insertionSort(LinkedList<T>* list) {
+    Node<T>* ptrOuter = list->ptrHead;
+    Node<T>* ptrInner = list->ptrHead;
 
     int iInsertValue = 0;
 
@@ -18,3 +19,6 @@ void insertionSort(LinkedList* list) {
         ptrOuter = ptrOuter->ptrNext;
     }
 }
+
+template void insertionSort<int>(LinkedList<int>*);
+template void insertionSort<float>(LinkedList<float>*);

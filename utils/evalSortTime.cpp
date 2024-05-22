@@ -11,9 +11,9 @@ using chrono::high_resolution_clock;
 using chrono::duration_cast;
 using chrono::nanoseconds;  
 
-float evalSortTime(int listSize, int seed, void (*func)(LinkedList*)) {
-    LinkedList* list = newRandomList(listSize, seed);
-
+float evalSortTime(int listSize, int seed, void (*func)(LinkedList<int>*)) {
+    LinkedList<int>* list = newRandomList(listSize, seed);
+    
     // Measure the time to execute the function
     auto timeStart = high_resolution_clock::now();
     func(list);

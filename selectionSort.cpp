@@ -1,10 +1,11 @@
 #include "utils/linkedList.h"
 #include "utils/sortingAlgorithms.h"
 
-void selectionSort(LinkedList* list) {
-    Node* minValueNode = newNode(0);
-    Node* ptrOuter = list->ptrHead;
-    Node* ptrInner = list->ptrHead;
+template <typename T>
+void selectionSort(LinkedList<T>* list) {
+    Node<T>* minValueNode = newNode<T>(0);
+    Node<T>* ptrOuter = list->ptrHead;
+    Node<T>* ptrInner = list->ptrHead;
 
     while (ptrOuter && ptrOuter->ptrNext) {
         minValueNode = ptrOuter;
@@ -23,10 +24,11 @@ void selectionSort(LinkedList* list) {
 }
 
 // Optimized selection sort algorithm for sorting the linked list
-void optimizedSelectionSort(LinkedList* list) {
-    Node* minValueNode = newNode(0);
-    Node* ptrOuter = list->ptrHead;
-    Node* ptrInner = list->ptrHead;
+template <typename T>
+void optimizedSelectionSort(LinkedList<T>* list) {
+    Node<T>* minValueNode = newNode<T>(0);
+    Node<T>* ptrOuter = list->ptrHead;
+    Node<T>* ptrInner = list->ptrHead;
 
     while (ptrOuter && ptrOuter->ptrNext) {
         minValueNode = ptrOuter;
@@ -43,3 +45,9 @@ void optimizedSelectionSort(LinkedList* list) {
         ptrOuter = ptrOuter->ptrNext;
     }
 }
+
+template void selectionSort<int>(LinkedList<int>*);
+template void selectionSort<float>(LinkedList<float>*);
+
+template void optimizedSelectionSort<int>(LinkedList<int>*);
+template void optimizedSelectionSort<float>(LinkedList<float>*);

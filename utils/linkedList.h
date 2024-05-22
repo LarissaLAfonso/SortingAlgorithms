@@ -1,33 +1,43 @@
 #ifndef _LINKEDLIST_H_
 #define _LINKEDLIST_H_
 
-extern "C" {
+template <typename T>
+struct Node {
+    T iData;
+    struct Node* ptrNext;
+    struct Node* ptrPrev;
+};
 
-    typedef struct Node {
-        int iData;
-        struct Node* ptrNext;
-        struct Node* ptrPrev;
-    } Node;
+template <typename T>
+struct LinkedList {
+    Node<T>* ptrHead;
+    Node<T>* ptrTail;
+};
 
-    typedef struct LinkedList {
-        Node* ptrHead;
-        Node* ptrTail;
-    } LinkedList;
+template <typename T> 
+Node<T>* newNode(T);
 
-    int getMax(LinkedList* const list);
+template <typename T> 
+LinkedList<T>* newLinkedList();
 
-    LinkedList* newLinkedList();
-    LinkedList* listFromArray(int *arriValues, int iArraySize);
-    LinkedList* newRandomList(int iListSize, int seed=0);
-    Node* newNode(int iValue);
-    Node* searchElement(LinkedList* const list, int iValue);
+template <typename T> LinkedList<T>* 
+listFromArray(int *arriValues, int iArraySize);
 
-    void addElement(LinkedList* list, int iValue);
-    void showElements(LinkedList* list);
-    void removeElement(LinkedList* list, int iValue);
-    void swapNodes(Node* ptrNode1, Node* ptrNode2);
-    void freeList(LinkedList* list);
-    void invertList(LinkedList* list);
-}
+LinkedList<int>* newRandomList(int, int);
+
+template <typename T> 
+int getMax(LinkedList<T>* const list);
+
+template <typename T> 
+void addElement(LinkedList<T>* list, T iValue);
+
+template <typename T> 
+void showElements(LinkedList<T>* list);
+
+template <typename T> 
+void swapNodes(Node<T>* ptrNode1, Node<T>* ptrNode2);
+
+template <typename T> 
+void freeList(LinkedList<T>* list);
 
 #endif

@@ -2,12 +2,13 @@
 #include "utils/sortingAlgorithms.h"
 
 // Bubble sort algorithm for sorting the linked list
-void bubbleSort(LinkedList* list) {
-    Node* ptrOuter = list->ptrHead;
+template <typename T>
+void bubbleSort(LinkedList<T>* list) {
+    Node<T>* ptrOuter = list->ptrHead;
 
     // Loop through the list
     while (ptrOuter && ptrOuter->ptrNext) {
-        Node* ptrInner = list->ptrHead;
+        Node<T>* ptrInner = list->ptrHead;
 
         // Loop through the list again
         while (ptrInner && ptrInner->ptrNext) {
@@ -22,14 +23,15 @@ void bubbleSort(LinkedList* list) {
 };
 
 // Optimized bubble sort algorithm for sorting the linked list
-void optimizedBubbleSort(LinkedList* list) {
+template <typename T>
+void optimizedBubbleSort(LinkedList<T>* list) {
 
     bool bUnordered = false; // Check if the list is already ordered
-    Node* ptrOuter = list->ptrHead;
-    Node* ptrLast = list->ptrTail;
+    Node<T>* ptrOuter = list->ptrHead;
+    Node<T>* ptrLast = list->ptrTail;
 
     while (ptrOuter && ptrOuter->ptrNext) {
-        Node* ptrInner = list->ptrHead;
+        Node<T>* ptrInner = list->ptrHead;
         bUnordered = false;
 
         while (ptrInner != ptrLast && ptrInner->ptrNext) {
@@ -50,3 +52,9 @@ void optimizedBubbleSort(LinkedList* list) {
     }  
 };
 
+
+template void bubbleSort<int>(LinkedList<int>*);
+template void bubbleSort<float>(LinkedList<float>*);
+
+template void optimizedBubbleSort<int>(LinkedList<int>*);
+template void optimizedBubbleSort<float>(LinkedList<float>*);

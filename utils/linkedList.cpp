@@ -3,8 +3,9 @@
 
 using namespace std;
 
-int getMax(LinkedList* const list) {
-    Node* temp = list->ptrHead;
+template <typename T>
+int getMax(LinkedList<T>* const list) {
+    Node<T>* temp = list->ptrHead;
     int max = temp->iData;
 
     while (temp != nullptr) {
@@ -17,8 +18,9 @@ int getMax(LinkedList* const list) {
     return max;
 }
 
-LinkedList* listFromArray(int *arriValues, int iArraySize) {
-    LinkedList* temp = newLinkedList();
+template <typename T>
+LinkedList<T>* listFromArray(int *arriValues, int iArraySize) {
+    LinkedList<T>* temp = newLinkedList<T>();
 
     for (int i=0; i<iArraySize; i++) {
         addElement(temp, arriValues[i]);
@@ -27,30 +29,32 @@ LinkedList* listFromArray(int *arriValues, int iArraySize) {
     return temp;
 }
 
-LinkedList* newLinkedList() {
-    LinkedList* temp = (LinkedList*) malloc(sizeof(LinkedList));
+template <typename T>
+LinkedList<T>* newLinkedList() {
+    LinkedList<T>* temp = (LinkedList<T>*) malloc(sizeof(LinkedList<T>));
     temp->ptrHead  = nullptr;
     temp->ptrTail  = nullptr;
     return temp;
 }
 
 // Function to create a new linked list with random values
-LinkedList* newRandomList(int iListSize, int seed) {
-    LinkedList* temp = (LinkedList*) malloc(sizeof(LinkedList));
+LinkedList<int>* newRandomList(int iListSize, int seed) {
+    LinkedList<int>* temp = (LinkedList<int>*) malloc(sizeof(LinkedList<int>));
 
     srand(seed);
 
     for (int i=0; i<iListSize; i++) {
         int iRandNum = rand() % 100 + 1;
-        addElement(temp, iRandNum);
+        addElement<int>(temp, iRandNum);
     }
 
     return temp;
 }
 
 // Function to create a new node with given value
-Node* newNode(int iValue) {
-    Node* temp = (Node*) malloc(sizeof(Node));
+template <typename T>
+Node<T>* newNode(T iValue) {
+    Node<T>* temp = (Node<T>*) malloc(sizeof(Node<T>));
     temp->iData = iValue;
     temp->ptrNext = nullptr;
     temp->ptrPrev = nullptr;
@@ -58,9 +62,10 @@ Node* newNode(int iValue) {
 }
 
 // Function to add an element to the linked list
-void addElement(LinkedList* const list, int iValue) {
+template <typename T>
+void addElement(LinkedList<T>* const list, T iValue) {
     
-    Node* temp = newNode(iValue);
+    Node<T>* temp = newNode<T>(iValue);
 
     if (list->ptrHead == nullptr) {
         list->ptrHead = temp;
@@ -76,9 +81,10 @@ void addElement(LinkedList* const list, int iValue) {
 }
 
 // Function to display elements of the linked list
-void showElements(LinkedList* const list) {
+template <typename T>
+void showElements(LinkedList<T>* const list) {
     
-    Node* temp = list->ptrHead;
+    Node<T>* temp = list->ptrHead;
 
     while (temp != nullptr) {
         cout << temp->iData << " ";
@@ -91,8 +97,9 @@ void showElements(LinkedList* const list) {
 }
 
 // Function to search for an element in the linked list
-Node* searchElement(LinkedList* const list, int iValue) {
-    Node* temp = nullptr;
+template <typename T>
+Node<T>* searchElement(LinkedList<T>* const list, int iValue) {
+    Node<T>* temp = nullptr;
     
     for (temp = list->ptrHead; temp != nullptr; temp = temp->ptrNext) {
         if (temp->iData == iValue) {
@@ -103,10 +110,11 @@ Node* searchElement(LinkedList* const list, int iValue) {
 }
 
 // Function to remove an element from the linked list
-void removeElement(LinkedList* const list, int iValue) {
+template <typename T>
+void removeElement(LinkedList<T>* const list, int iValue) {
 
-    Node* temp = searchElement(list, iValue);;
-    Node* garbage = nullptr;
+    Node<T>* temp = searchElement(list, iValue);;
+    Node<T>* garbage = nullptr;
 
     if (temp->ptrPrev == nullptr) {
         list->ptrHead = temp->ptrNext;
@@ -127,9 +135,10 @@ void removeElement(LinkedList* const list, int iValue) {
 }
 
 // Function to free memory allocated for the linked list
-void freeList(LinkedList* list) {
-    Node* current = list->ptrHead;
-    Node* previous = nullptr;
+template <typename T>
+void freeList(LinkedList<T>* list) {
+    Node<T>* current = list->ptrHead;
+    Node<T>* previous = nullptr;
 
     while (current) {
         previous = current;
@@ -143,10 +152,29 @@ void freeList(LinkedList* list) {
 }
 
 // Function to swap the data of two nodes
-void swapNodes(Node* ptrNode1, Node* ptrNode2) {
+template <typename T>
+void swapNodes(Node<T>* ptrNode1, Node<T>* ptrNode2) {
 
     int iTemp = ptrNode1->iData;
 
     ptrNode1->iData = ptrNode2->iData;
     ptrNode2->iData = iTemp;
 }
+
+template LinkedList<int>* newLinkedList<int>();
+template LinkedList<float>* newLinkedList<float>();
+
+template int getMax<int>(LinkedList<int>*);
+template int getMax<float>(LinkedList<float>*);
+
+template Node<int>* newNode<int>(int);
+template Node<float>* newNode<float>(float);
+
+template void showElements<int>(LinkedList<int>*);
+template void showElements<float>(LinkedList<float>*);
+
+template void addElement<int>(LinkedList<int>*, int);
+template void addElement<float>(LinkedList<float>*, float);
+
+template void swapNodes<int>(Node<int>*, Node<int>*);
+template void swapNodes<float>(Node<float>*, Node<float>*);

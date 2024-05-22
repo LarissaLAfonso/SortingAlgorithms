@@ -6,10 +6,10 @@
 
 using namespace std;
 
-void optimizedSelectionSortModulo(LinkedList* list, int iExp) {
-    Node* minValueNode = newNode(0);
-    Node* ptrOuter = list->ptrHead;
-    Node* ptrInner = list->ptrHead;
+void optimizedSelectionSortModulo(LinkedList<int>* list, int iExp) {
+    Node<int>* minValueNode = newNode(0);
+    Node<int>* ptrOuter = list->ptrHead;
+    Node<int>* ptrInner = list->ptrHead;
 
     while (ptrOuter && ptrOuter->ptrNext) {
         minValueNode = ptrOuter;
@@ -27,7 +27,7 @@ void optimizedSelectionSortModulo(LinkedList* list, int iExp) {
     }
 }
 
-void radixSort(LinkedList* list) 
+void radixSort(LinkedList<int>* list) 
 {
     int iMaximum = getMax(list);
 
