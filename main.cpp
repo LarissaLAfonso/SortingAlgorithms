@@ -13,7 +13,8 @@ int main() {
 
     cout << "Bubble Sort, Optimized Bubble Sort, Selection Sort, Optimized Selection Sort, Insertion Sort, Radix Sort" << endl;
 
-    for (int i=0; i<iNumberTests; i++) {
+    for (int i=0; i<iNumberTests; i++) 
+    {
         cout << evalSortTime(iListSize, i+1, &bubbleSort);
         cout << ", ";
 
@@ -32,6 +33,9 @@ int main() {
         cout << evalSortTime(iListSize, i+1, &radixSort);
         cout << endl;        
     }
+
+    int iArray[10] = {40, 3, 23, 41, 6, 73, 9, 69, 4, 100};
+    radixExplainer(iArray, 10);
 
     return 0;
 }
