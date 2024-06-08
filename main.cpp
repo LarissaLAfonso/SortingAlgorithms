@@ -3,6 +3,7 @@
 #include "utils/linkedList.h"
 #include "utils/evalSortTime.h"
 #include "utils/sortingAlgorithms.h"
+#include "utils/bfsLinkedList.h"
 
 using namespace std;
 
@@ -42,6 +43,22 @@ int main() {
         cout << evalSortTime(iListSize, i+1, &radixSort);
         cout << endl;        
     }
+    
+    
+    TreeNode<int>* root = nullptr;
+    
+    root = insertNode<int>(root, 42);
+    /*
+    root = insertNode<int>(root, 13);
+    root = insertNode(root, 11);
+    root = insertNode(root, 10);
+    root = insertNode(root, 28);
+    root = insertNode(root, 51);
+    root = insertNode(root, 171);
+    */
+    cout << "BFS Traversal: ";
+    //bfsTraversal<int>(root);
+    cout << endl;
 
     return 0;
 }
