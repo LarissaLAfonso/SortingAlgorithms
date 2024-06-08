@@ -8,6 +8,19 @@
 using namespace std;
 
 int main() {
+    TreeNode<int>* root = nullptr;
+    
+    root = insertNode(root, 42);
+    root = insertNode(root, 13);
+    root = insertNode(root, 11);
+    root = insertNode(root, 10);
+    root = insertNode(root, 28);
+    root = insertNode(root, 51);
+    root = insertNode(root, 171);
+    
+    cout << "BFS Traversal: ";
+    bfsTraversal<int>(root);
+    cout << endl;
 
     int iArray[10] = {40, 3, 23, 41, 6, 73, 9, 69, 4, 100};
     LinkedList<int>* list = listFromArray<int>(iArray, 10);
@@ -41,24 +54,11 @@ int main() {
         cout << ", ";
 
         cout << evalSortTime(iListSize, i+1, &radixSort);
-        cout << endl;        
+        cout << endl;  
+
+        cout << evalBfsTime(iListSize, i+1, &bfsTraversal);      
+
     }
-    
-    
-    TreeNode<int>* root = nullptr;
-    
-    root = insertNode<int>(root, 42);
-    /*
-    root = insertNode<int>(root, 13);
-    root = insertNode(root, 11);
-    root = insertNode(root, 10);
-    root = insertNode(root, 28);
-    root = insertNode(root, 51);
-    root = insertNode(root, 171);
-    */
-    cout << "BFS Traversal: ";
-    //bfsTraversal<int>(root);
-    cout << endl;
 
     return 0;
 }

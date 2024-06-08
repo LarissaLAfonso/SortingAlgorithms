@@ -4,6 +4,7 @@
 
 #include "linkedList.h"
 #include "evalSortTime.h"
+#include "bfsLinkedList.h"
 
 using namespace std;
 
@@ -17,6 +18,30 @@ float evalSortTime(int listSize, int seed, void (*func)(LinkedList<int>*)) {
     // Measure the time to execute the function
     auto timeStart = high_resolution_clock::now();
     func(list);
+    auto timeStop = high_resolution_clock::now();
+
+    // Calculate execution time
+    auto timeDuration = duration_cast<nanoseconds>(timeStop - timeStart);
+
+    return timeDuration.count() * 1e-9;
+}
+
+
+float evalBfsTime(int listSize, int seed, void (*func)(TreeNode<int>*)) {
+    LinkedList<int>* iList = newRandomList(listSize, seed);
+    
+    TreeNode<int>* root = nullptr;
+    
+    Node<int>* currentNode = iList -> ptrHead;
+    while (currentNode != nullptr) 
+    {
+        root = insertNode(root, currentNode -> iData);
+        currentNode = currentNode -> ptrNext;
+    }
+
+    // Measure the time to execute the function
+    auto timeStart = high_resolution_clock::now();
+    func(root);
     auto timeStop = high_resolution_clock::now();
 
     // Calculate execution time

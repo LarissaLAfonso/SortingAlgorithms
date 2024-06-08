@@ -46,7 +46,7 @@ void bfsTraversal(TreeNode<T>* root)
 
     Node<TreeNode<T>*>* currentNode = list -> ptrHead;
     
-    while (currentNode != (list -> ptrTail))
+    while (currentNode != nullptr) 
     {
         
         cout << currentNode -> iData -> iData << " ";
@@ -62,6 +62,8 @@ void bfsTraversal(TreeNode<T>* root)
             list -> ptrTail -> ptrNext = newNode<TreeNode<T>*>(currentNode->iData->ptrRight);
             list -> ptrTail = list -> ptrTail -> ptrNext;
         }
+
+        currentNode = currentNode -> ptrNext;
     }
 }
 
