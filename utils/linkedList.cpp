@@ -1,5 +1,6 @@
 #include <iostream>
 #include "linkedList.h"
+#include "bfsLinkedList.h"
 
 using namespace std;
 
@@ -169,6 +170,8 @@ template int getMax<float>(LinkedList<float>*);
 
 template Node<int>* newNode<int>(int);
 template Node<float>* newNode<float>(float);
+template Node<TreeNode<int>*>* newNode<TreeNode<int>*>(TreeNode<int>*);
+template Node<TreeNode<float>*>* newNode<TreeNode<float>*>(TreeNode<float>*);
 
 template void showElements<int>(LinkedList<int>*);
 template void showElements<float>(LinkedList<float>*);
