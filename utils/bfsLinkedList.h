@@ -17,4 +17,7 @@ TreeNode<T>* createNode(T iData);
 template <typename T>
 TreeNode<T>* insertNode(TreeNode<T>* startingNode, T iData);
 
+template <typename T>
+void dfsPreOrder(TreeNode<T>* startingNode);
+
 #endif // BFS_LINKED_LIST_H

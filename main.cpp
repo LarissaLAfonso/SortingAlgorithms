@@ -22,6 +22,10 @@ int main() {
     bfsTraversal<int>(root);
     cout << endl;
 
+    cout << "DFS Pre-Order Traversal: ";
+    dfsPreOrder<int>(root);
+    cout << endl;
+
     int iArray[10] = {40, 3, 23, 41, 6, 73, 9, 69, 4, 100};
     LinkedList<int>* list = listFromArray<int>(iArray, 10);
 
@@ -56,7 +60,11 @@ int main() {
         cout << evalSortTime(iListSize, i+1, &radixSort);
         cout << endl;  
 
-        cout << evalBfsTime(iListSize, i+1, &bfsTraversal);      
+        cout << evalTreeTime(iListSize, i+1, &bfsTraversal); 
+        cout << endl;
+
+        cout << evalTreeTime(iListSize, i+1, &dfsPreOrder);
+        cout << endl;     
 
     }
 
