@@ -9,4 +9,8 @@ float evalCreationTimeTree(int iSize, int seed);
 float evalSearchTimeList(int iSize, int seed, Node<int>* (*func)(LinkedList<int>*, int));
 float evalSearchTimeTree(int iSize, int seed, TreeNode<int>* (*func)(TreeNode<int>*, int));
 
+void evalSortingTimes(int iNumberTests, int iListSize);
+void evalSearchTimes(int iNumberTests, int iListSize);
+void evalCreationTimes(int iNumberTests, int iListSize);
+
 #endif

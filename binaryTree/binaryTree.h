@@ -28,4 +28,7 @@ TreeNode<T>* dfSearch(TreeNode<T>* startingNode, T data);
 template<typename T>
 TreeNode<T>* bfSearch(TreeNode<T>* root, T data);
 
+template <typename T>
+void deleteTree(TreeNode<T>* root);
+
 #endif

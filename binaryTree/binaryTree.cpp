@@ -31,18 +31,17 @@ TreeNode<T>* insertTreeNode(TreeNode<T>* startingNode, T data)
     return startingNode;
 }
 
-// template <typename T>
-// TreeNode<T>* binaryTreeFromArray(T* arrValues, int iArraySize)
-// {
-//     TreeNode<T>* root = nullptr;
+template <typename T>
+void deleteTree(TreeNode<T>* root)
+{
+    if (root == nullptr)
+        return;
 
-//     for (int i = 0; i < iArraySize; i++)
-//     {
-//         root = insertTreeNode(root, arrValues[i]);
-//     }
+    deleteTree(root->ptrLeft);
+    deleteTree(root->ptrRight);
 
-//     return root;
-// }
+    free(root);
+}
 
 TreeNode<int>* newRandomTree(int iTreeSize, int seed) {
     TreeNode<int>* temp = nullptr;
@@ -203,3 +202,6 @@ template TreeNode<int>* dfSearch(TreeNode<int>* startingNode, int data);
 
 template TreeNode<int>* bfSearch(TreeNode<int>* root, int data);
 template TreeNode<float>* bfSearch(TreeNode<float>* root, float data);
+
+template void deleteTree(TreeNode<int>* root);
+template void deleteTree(TreeNode<float>* root);
