@@ -20,8 +20,8 @@ Node<T>* newNode(T);
 template <typename T> 
 LinkedList<T>* newLinkedList();
 
-template <typename T> LinkedList<T>* 
-listFromArray(int *arriValues, int iArraySize);
+template <typename T> 
+LinkedList<T>*  listFromArray(T *arriValues, int iArraySize);
 
 LinkedList<int>* newRandomList(int, int);
 

@@ -1,6 +1,6 @@
 #ifndef _SORTINGALGORITHMS_H_
 #define _SORTINGALGORITHMS_H_
-#include "linkedList.h"
+#include "../linkedList/linkedList.h"
 
 template <typename T> void bubbleSort(LinkedList<T>*);
 template <typename T> void optimizedBubbleSort(LinkedList<T>*);

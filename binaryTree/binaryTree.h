@@ -1,5 +1,5 @@
-#ifndef _BFS_LINKED_LIST_H_
-#define _BFS_LINKED_LIST_H_
+#ifndef _BINARYTREE_H_
+#define _BINARYTREE_H_
 
 template <typename T>
 struct TreeNode {
@@ -12,12 +12,12 @@ template <typename T>
 void  bfsTraversal(TreeNode<T>* root);
 
 template <typename T>
-TreeNode<T>* createNode(T iData);
+TreeNode<T>* createTreeNode(T iData);
 
 template <typename T>
-TreeNode<T>* insertNode(TreeNode<T>* startingNode, T iData);
+TreeNode<T>* insertTreeNode(TreeNode<T>* startingNode, T iData);
 
 template <typename T>
 void dfsInOrder(TreeNode<T>* startingNode);
 
-#endif // BFS_LINKED_LIST_H
+#endif

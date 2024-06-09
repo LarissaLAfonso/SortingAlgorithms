@@ -1,5 +1,5 @@
-#include "utils/linkedList.h"
-#include "utils/sortingAlgorithms.h"
+#include "../linkedList/linkedList.h"
+#include "sortAlgs.h"
 
 // Bubble sort algorithm for sorting the linked list
 template <typename T>

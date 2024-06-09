@@ -1,5 +1,5 @@
-#include "utils/linkedList.h"
-#include "utils/sortingAlgorithms.h"
+#include "../linkedList/linkedList.h"
+#include "sortAlgs.h"
 
 template <typename T>
 void insertionSort(LinkedList<T>* list) {

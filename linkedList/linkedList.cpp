@@ -1,6 +1,6 @@
 #include <iostream>
 #include "linkedList.h"
-#include "bfsLinkedList.h"
+#include "../binaryTree/binaryTree.h"
 
 using namespace std;
 
@@ -20,7 +20,7 @@ int getMax(LinkedList<T>* const list) {
 }
 
 template <typename T>
-LinkedList<T>* listFromArray(int *arrValues, int iArraySize) {
+LinkedList<T>* listFromArray(T *arrValues, int iArraySize) {
     LinkedList<T>* temp = newLinkedList<T>();
 
     for (int i=0; i<iArraySize; i++) {
@@ -170,8 +170,10 @@ template int getMax<float>(LinkedList<float>*);
 
 template Node<int>* newNode<int>(int);
 template Node<float>* newNode<float>(float);
-template Node<TreeNode<int>*>* newNode<TreeNode<int>*>(TreeNode<int>*);
-template Node<TreeNode<float>*>* newNode<TreeNode<float>*>(TreeNode<float>*);
+
+
+template LinkedList<int>* listFromArray<int>(int*, int);
+template LinkedList<float>* listFromArray<float>(float*, int);
 
 template void showElements<int>(LinkedList<int>*);
 template void showElements<float>(LinkedList<float>*);
@@ -182,4 +184,9 @@ template void addElement<float>(LinkedList<float>*, float);
 template void swapNodes<int>(Node<int>*, Node<int>*);
 template void swapNodes<float>(Node<float>*, Node<float>*);
 
-template LinkedList<int>* listFromArray(int *arrValues, int iArraySize);
+
+template LinkedList<TreeNode<int>*>* newLinkedList<TreeNode<int>*>();
+template LinkedList<TreeNode<float>*>* newLinkedList<TreeNode<float>*>();
+
+template Node<TreeNode<int>*>* newNode<TreeNode<int>*>(TreeNode<int>*);
+template Node<TreeNode<float>*>* newNode<TreeNode<float>*>(TreeNode<float>*);

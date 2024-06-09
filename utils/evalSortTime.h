@@ -3,6 +3,6 @@
 
 float evalSortTime(int listSize, int seed, void (*func)(LinkedList<int>*));
 
-float evalTreeTime(int listSize, int seed, void (*func)(TreeNode<int>*));
+// float evalTreeTime(int listSize, int seed, void (*func)(TreeNode<int>*));
 
 #endif

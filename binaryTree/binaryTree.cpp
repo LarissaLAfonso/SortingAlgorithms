@@ -1,32 +1,32 @@
-#include "bfsLinkedList.h"
-#include "linkedList.h"
+#include "binaryTree.h"
+#include "../linkedList/linkedList.h"
 #include <cstdlib>
 #include <iostream>
 
 using namespace std;
 
 template<typename T>
-TreeNode<T>* createNode(T iData)
+TreeNode<T>* createTreeNode(T iData)
 {
-    TreeNode<T>* tmp = (TreeNode<T>*) malloc(sizeof(TreeNode<T>));
+    TreeNode<T>* temp = (TreeNode<T>*) malloc(sizeof(TreeNode<T>));
 
-    tmp->iData = iData;
-    tmp->ptrLeft = nullptr;
-    tmp->ptrRight = nullptr;
+    temp->iData = iData;
+    temp->ptrLeft = nullptr;
+    temp->ptrRight = nullptr;
 
-    return tmp;
+    return temp;
 }
 
 template <typename T>
-TreeNode<T>* insertNode(TreeNode<T>* startingNode, T iData)
+TreeNode<T>* insertTreeNode(TreeNode<T>* startingNode, T iData)
 {
     if (startingNode == nullptr)
-        return createNode(iData);
+        return createTreeNode(iData);
 
     if (iData < (startingNode->iData))
-        startingNode->ptrLeft = insertNode(startingNode->ptrLeft, iData);
+        startingNode->ptrLeft = insertTreeNode(startingNode->ptrLeft, iData);
     else
-        startingNode->ptrRight = insertNode(startingNode->ptrRight, iData);
+        startingNode->ptrRight = insertTreeNode(startingNode->ptrRight, iData);
 
     return startingNode;
 }
@@ -38,7 +38,8 @@ void bfsTraversal(TreeNode<T>* root)
         return;
 
     // Create a linked list to store TreeNode pointers
-    LinkedList<TreeNode<T>*>* list = new LinkedList<TreeNode<T>*>();
+    LinkedList<TreeNode<T>*>* list = newLinkedList<TreeNode<T>*>();
+
     list -> ptrHead = (Node<TreeNode<T>*>*)malloc(sizeof(Node<TreeNode<T>*>*)); // front
     list -> ptrTail = list -> ptrHead; // rear
 
@@ -72,17 +73,17 @@ void dfsInOrder(TreeNode<T>* startingNode)
 {
     if (startingNode != nullptr)
     {
-        traversePreOrder(startingNode -> ptrLeft);
+        dfsInOrder(startingNode -> ptrLeft);
         cout << " " << startingNode -> iData;
-        traversePreOrder(startingNode -> ptrRight);
+        dfsInOrder(startingNode -> ptrRight);
     }
 }
 
-template TreeNode<int>* createNode(int iData);
-template TreeNode<float>* createNode(float iData);
+template TreeNode<int>* createTreeNode(int iData);
+template TreeNode<float>* createTreeNode(float iData);
 
-template TreeNode<int>* insertNode(TreeNode<int>* startingNode, int iData);
-template TreeNode<float>* insertNode(TreeNode<float>* startingNode, float iData);
+template TreeNode<int>* insertTreeNode(TreeNode<int>* startingNode, int iData);
+template TreeNode<float>* insertTreeNode(TreeNode<float>* startingNode, float iData);
 
 template void bfsTraversal(TreeNode<int>* root);
 template void bfsTraversal(TreeNode<float>* root);
