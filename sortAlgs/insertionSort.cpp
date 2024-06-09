@@ -10,9 +10,9 @@ void insertionSort(LinkedList<T>* list) {
 
     while (ptrOuter) {
         ptrInner = ptrOuter->ptrPrev;
-        iInsertValue = ptrOuter->iData;
+        iInsertValue = ptrOuter->data;
 
-        while (ptrInner && (ptrInner->iData > iInsertValue)) {
+        while (ptrInner && (ptrInner->data > iInsertValue)) {
             swapNodes(ptrInner->ptrNext, ptrInner);
             ptrInner = ptrInner->ptrPrev;
         }

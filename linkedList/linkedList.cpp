@@ -1,4 +1,5 @@
 #include <iostream>
+
 #include "linkedList.h"
 #include "../binaryTree/binaryTree.h"
 
@@ -7,11 +8,11 @@ using namespace std;
 template <typename T>
 int getMax(LinkedList<T>* const list) {
     Node<T>* temp = list->ptrHead;
-    int max = temp->iData;
+    int max = temp->data;
 
     while (temp != nullptr) {
-        if (temp->iData > max) {
-            max = temp->iData;
+        if (temp->data > max) {
+            max = temp->data;
         }
         temp = temp->ptrNext;
     }
@@ -56,7 +57,7 @@ LinkedList<int>* newRandomList(int iListSize, int seed) {
 template <typename T>
 Node<T>* newNode(T iValue) {
     Node<T>* temp = (Node<T>*) malloc(sizeof(Node<T>));
-    temp->iData = iValue;
+    temp->data = iValue;
     temp->ptrNext = nullptr;
     temp->ptrPrev = nullptr;
     return temp;
@@ -89,7 +90,7 @@ void showElements(LinkedList<T>* const list) {
 
     cout << "[ ";
     while (temp != nullptr) {
-        cout << temp->iData << " ";
+        cout << temp->data << " ";
         temp = temp->ptrNext;
     }
     cout << "]" << endl;
@@ -103,7 +104,7 @@ Node<T>* searchElement(LinkedList<T>* const list, int iValue) {
     Node<T>* temp = nullptr;
     
     for (temp = list->ptrHead; temp != nullptr; temp = temp->ptrNext) {
-        if (temp->iData == iValue) {
+        if (temp->data == iValue) {
             return temp;
         }
     }
@@ -156,10 +157,10 @@ void freeList(LinkedList<T>* list) {
 template <typename T>
 void swapNodes(Node<T>* ptrNode1, Node<T>* ptrNode2) {
 
-    int iTemp = ptrNode1->iData;
+    int iTemp = ptrNode1->data;
 
-    ptrNode1->iData = ptrNode2->iData;
-    ptrNode2->iData = iTemp;
+    ptrNode1->data = ptrNode2->data;
+    ptrNode2->data = iTemp;
 }
 
 template LinkedList<int>* newLinkedList<int>();
@@ -184,6 +185,7 @@ template void addElement<float>(LinkedList<float>*, float);
 template void swapNodes<int>(Node<int>*, Node<int>*);
 template void swapNodes<float>(Node<float>*, Node<float>*);
 
+template Node<int>* searchElement(LinkedList<int>* const list, int iValue);
 
 template LinkedList<TreeNode<int>*>* newLinkedList<TreeNode<int>*>();
 template LinkedList<TreeNode<float>*>* newLinkedList<TreeNode<float>*>();

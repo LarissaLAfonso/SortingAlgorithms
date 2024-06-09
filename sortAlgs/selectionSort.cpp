@@ -12,7 +12,7 @@ void selectionSort(LinkedList<T>* list) {
         ptrInner = ptrOuter->ptrNext;
 
         while (ptrInner) {
-            if (minValueNode->iData > ptrInner->iData) {
+            if (minValueNode->data > ptrInner->data) {
                 minValueNode = ptrInner;
                 swapNodes(ptrOuter, minValueNode);
             }
@@ -35,7 +35,7 @@ void optimizedSelectionSort(LinkedList<T>* list) {
         ptrInner = ptrOuter->ptrNext;
 
         while (ptrInner) {
-            if (minValueNode->iData > ptrInner->iData) {
+            if (minValueNode->data > ptrInner->data) {
                 minValueNode = ptrInner;
             }
             ptrInner = ptrInner->ptrNext;

@@ -3,7 +3,7 @@
 
 template <typename T>
 struct Node {
-    T iData;
+    T data;
     struct Node* ptrNext;
     struct Node* ptrPrev;
 };
@@ -39,5 +39,8 @@ void swapNodes(Node<T>* ptrNode1, Node<T>* ptrNode2);
 
 template <typename T> 
 void freeList(LinkedList<T>* list);
+
+template <typename T>
+Node<T>* searchElement(LinkedList<T>* const list, int iValue);
 
 #endif

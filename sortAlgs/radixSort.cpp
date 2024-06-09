@@ -16,7 +16,7 @@ void optimizedSelectionSortModulo(LinkedList<int>* list, int iExp) {
         ptrInner = ptrOuter->ptrNext;
 
         while (ptrInner) {
-            if (minValueNode->iData / iExp % 10 > ptrInner->iData / iExp % 10){
+            if (minValueNode->data / iExp % 10 > ptrInner->data / iExp % 10){
                 minValueNode = ptrInner;
             }
             ptrInner = ptrInner->ptrNext;
