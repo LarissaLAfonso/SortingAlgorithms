@@ -13,7 +13,7 @@ void bubbleSort(LinkedList<T>* list) {
         // Loop through the list again
         while (ptrInner && ptrInner->ptrNext) {
             // Swap values if the current pointer has a bigger value than the next one
-            if ((ptrInner->iData) > (ptrInner->ptrNext->iData)) {
+            if ((ptrInner->data) > (ptrInner->ptrNext->data)) {
                 swapNodes(ptrInner, ptrInner->ptrNext);
             }
             ptrInner = ptrInner->ptrNext;
@@ -36,7 +36,7 @@ void optimizedBubbleSort(LinkedList<T>* list) {
 
         while (ptrInner != ptrLast && ptrInner->ptrNext) {
             // Swap values if the current pointer has a bigger value than the next one
-            if ((ptrInner->iData) > (ptrInner->ptrNext->iData)) {
+            if ((ptrInner->data) > (ptrInner->ptrNext->data)) {
                 swapNodes(ptrInner, ptrInner->ptrNext);
                 bUnordered = true;
             }
