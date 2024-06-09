@@ -68,7 +68,7 @@ void bfsTraversal(TreeNode<T>* root)
 }
 
 template <typename T>
-void dfsInOrder(Node<T>* startingNode)
+void dfsInOrder(TreeNode<T>* startingNode)
 {
     if (startingNode != nullptr)
     {
@@ -87,6 +87,6 @@ template TreeNode<float>* insertNode(TreeNode<float>* startingNode, float iData)
 template void bfsTraversal(TreeNode<int>* root);
 template void bfsTraversal(TreeNode<float>* root);
 
-template void dfsInOrder(Node<int>* startingNode);
-template void dfsInOrder(Node<float>* startingNode);
+template void dfsInOrder(TreeNode<int>* startingNode);
+template void dfsInOrder(TreeNode<float>* startingNode);
 
