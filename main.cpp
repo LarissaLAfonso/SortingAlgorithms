@@ -63,7 +63,7 @@ int main() {
         cout << evalTreeTime(iListSize, i+1, &bfsTraversal); 
         cout << endl;
 
-        cout << evalTreeTime(iListSize, i+1, &dfsPreOrder);
+        cout << evalTreeTime(iListSize, i+1, &dfsInOrder);
         cout << endl;     
 
     }

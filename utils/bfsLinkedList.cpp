@@ -37,7 +37,7 @@ void bfsTraversal(TreeNode<T>* root)
     if (root == nullptr)
         return;
 
-    // Criando lista de valores
+    // Create a linked list to store TreeNode pointers
     LinkedList<TreeNode<T>*>* list = new LinkedList<TreeNode<T>*>();
     list -> ptrHead = (Node<TreeNode<T>*>*)malloc(sizeof(Node<TreeNode<T>*>*)); // front
     list -> ptrTail = list -> ptrHead; // rear
@@ -67,14 +67,14 @@ void bfsTraversal(TreeNode<T>* root)
     }
 }
 
-template <typename T>
+template<typename T>
 void dfsInOrder(TreeNode<T>* startingNode)
 {
     if (startingNode != nullptr)
     {
-        traverseInOrder(startingNode -> ptrLeft);
+        traversePreOrder(startingNode -> ptrLeft);
         cout << " " << startingNode -> iData;
-        traverseInOrder(startingNode -> ptrRight);
+        traversePreOrder(startingNode -> ptrRight);
     }
 }
 
