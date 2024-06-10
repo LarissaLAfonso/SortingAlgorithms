@@ -41,7 +41,7 @@ LinkedList<T>* newLinkedList() {
 
 // Function to create a new linked list with random values
 LinkedList<int>* newRandomList(int iListSize, int seed) {
-    LinkedList<int>* temp = (LinkedList<int>*) malloc(sizeof(LinkedList<int>));
+    LinkedList<int>* temp = newLinkedList<int>();
 
     srand(seed);
 
@@ -181,6 +181,8 @@ template void showElements<float>(LinkedList<float>*);
 
 template void addElement<int>(LinkedList<int>*, int);
 template void addElement<float>(LinkedList<float>*, float);
+template void addElement<TreeNode<int>*>(LinkedList<TreeNode<int>*>*, TreeNode<int>*);
+template void addElement<TreeNode<float>*>(LinkedList<TreeNode<float>*>*, TreeNode<float>*);
 
 template void swapNodes<int>(Node<int>*, Node<int>*);
 template void swapNodes<float>(Node<float>*, Node<float>*);

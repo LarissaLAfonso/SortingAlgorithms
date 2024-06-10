@@ -66,10 +66,7 @@ void bfsTraversal(TreeNode<T>* root)
     // Create a linked list to store TreeNode pointers
     LinkedList<TreeNode<T>*>* list = newLinkedList<TreeNode<T>*>();
 
-    list->ptrHead = (Node<TreeNode<T>*>*)malloc(sizeof(Node<TreeNode<T>*>*)); // front
-    list->ptrTail = list->ptrHead; // rear
-
-    list->ptrHead->data = root;
+    addElement(list, root);
 
     Node<TreeNode<T>*>* currentNode = list->ptrHead;
     
@@ -80,14 +77,12 @@ void bfsTraversal(TreeNode<T>* root)
 
         if (currentNode->data->ptrLeft != nullptr)
         {
-            list->ptrTail->ptrNext = newNode<TreeNode<T>*>(currentNode->data->ptrLeft);
-            list->ptrTail = list->ptrTail->ptrNext;
+            addElement(list, currentNode->data->ptrLeft);
         }
         
         if (currentNode->data->ptrRight != nullptr)
         {
-            list->ptrTail->ptrNext = newNode<TreeNode<T>*>(currentNode->data->ptrRight);
-            list->ptrTail = list->ptrTail->ptrNext;
+            addElement(list, currentNode->data->ptrRight);
         }
 
         currentNode = currentNode->ptrNext;
@@ -154,10 +149,7 @@ TreeNode<T>* bfSearch(TreeNode<T>* root, T data) {
     // Create a linked list to store TreeNode pointers
     LinkedList<TreeNode<T>*>* list = newLinkedList<TreeNode<T>*>();
 
-    list->ptrHead = (Node<TreeNode<T>*>*) malloc(sizeof(Node<TreeNode<T>*>*)); // front
-    list->ptrTail = list->ptrHead; // rear
-
-    list->ptrHead->data = root;
+    addElement(list, root);
 
     Node<TreeNode<T>*>* currentNode = list->ptrHead;
     
@@ -167,16 +159,14 @@ TreeNode<T>* bfSearch(TreeNode<T>* root, T data) {
         {
             if (currentNode->data->ptrLeft->data == data)
                 return currentNode->data->ptrLeft;
-            list->ptrTail->ptrNext = newNode<TreeNode<T>*>(currentNode->data->ptrLeft);
-            list->ptrTail = list->ptrTail->ptrNext;
+            addElement(list, currentNode->data->ptrLeft);
         }
         
         if (currentNode->data->ptrRight != nullptr)
         {
             if (currentNode->data->ptrRight->data == data)
                 return currentNode->data->ptrRight;
-            list->ptrTail->ptrNext = newNode<TreeNode<T>*>(currentNode->data->ptrRight);
-            list->ptrTail = list->ptrTail->ptrNext;
+            addElement(list, currentNode->data->ptrRight);
         }
 
         currentNode = currentNode->ptrNext;

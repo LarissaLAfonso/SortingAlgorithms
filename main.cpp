@@ -15,8 +15,8 @@ int main() {
     int iNumberTests = 100;
     int iListSize = 10000;
 
-    evalSearchTimes(iNumberTests, iListSize);
     evalCreationTimes(iNumberTests, iListSize);
+    evalSearchTimes(iNumberTests, iListSize);
     evalSortingTimes(iNumberTests, iListSize);
 
     return 0;

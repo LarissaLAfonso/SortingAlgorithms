@@ -100,7 +100,7 @@ void evalSortingTimes(int iNumberTests, int iListSize) {
         sortingTimes << evalSortTime(iListSize, i+1, &radixSort) << "\n";
     }
 
-    cout << "\v" << endl;
+    cout << "\n" << endl;
 
     sortingTimes.close();
 }
@@ -115,10 +115,10 @@ void evalSearchTimes(int iNumberTests, int iListSize) {
 
         searchTimes << evalSearchTimeList(iListSize, i+1, &searchElement) << ", ";
         searchTimes << evalSearchTimeTree(iListSize, i+1, &bfSearch) << ", ";
-        searchTimes << evalSearchTimeTree(iListSize, i+1, &dfSearch) << "\n ";
+        searchTimes << evalSearchTimeTree(iListSize, i+1, &dfSearch) << "\n";
     }
 
-    cout << "\v" << endl;
+    cout << "\n" << endl;
 
     searchTimes.close();
 }
@@ -135,7 +135,7 @@ void evalCreationTimes(int iNumberTests, int iListSize) {
         creationTimes << evalCreationTimeTree(iListSize, i+1) << "\n";
     }
 
-    cout << "\v" << endl;
+    cout << "\n" << endl;
 
     creationTimes.close();
 }
