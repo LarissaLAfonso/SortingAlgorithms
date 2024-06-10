@@ -10,7 +10,6 @@ using namespace std;
 
 int main() {
 
-
     radixExplainer(newRandomList(10, 1));
 
     int iNumberTests = 100;
